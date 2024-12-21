@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Edit Kontak{% endblock title %}
+
+{% block content %}
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
+    <h1 class="text-3xl font-semibold text-center mb-6 text-gray-700">Edit Kontak</h1>
+    <form action="" method="post" class="space-y-6">
+      {% csrf_token %}
+      <div class="w-full">
+        {{ form|crispy }}
+      </div>
+      <div class="flex justify-between items-center">
+        <button
+          type="submit"
+          class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+        >
+          Edit Kontak
+        </button>
+      </div>
+    </form>
+    <div class="mt-6 text-center">
+      <a
+        href="{% url 'kontak:daftar_kontak' %}"
+        class="text-blue-500 hover:text-blue-600 font-medium"
+      >
+        Kembali ke Daftar Kontak
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock content %}
